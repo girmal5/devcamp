@@ -1,5 +1,16 @@
-<h1>PORTFOLIO</h1>
+<h1> PORTFOLIO ITEMS </h1>
 
+<a href="pfolios/new"> CREATE NEW ITEM </a> <br>
+
+<%= link_to "Create new item ", new_pfolio_path %>
+
+<br>
+
+<%= new_pfolio_path %>
+
+<br>
+
+<%= new_pfolio_url %>
 
 <% @portfolio_items.each do |portfolio_item| %>
 
@@ -10,10 +21,6 @@
   <%= image_tag portfolio_item.thumb_image if !portfolio_item.thumb_image.nil?  %>
   <%#= image_tag portfolio_item.thumb_image unless !portfolio_item.thumb_image.nil?  %>
 
-
-
-
-
   <!-- basically saying above if it is not nill then display the image otherwise dont display shit
   for the ones that don;t have the image
 
@@ -21,5 +28,6 @@
  -->
 
   <hr>
-
+<%=link_to "Edit Portfolio", edit_pfolio_path(portfolio_item.id) %>
+<a href="/pfolios/<%= portfolio_item.id %>/edit"> EDIT WITH A TAGS</a>
 <% end %>
