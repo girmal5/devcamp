@@ -14,7 +14,8 @@
 
 <% @portfolio_items.each do |portfolio_item| %>
 
-  <p> <strong> <%= portfolio_item.title  %> </strong>  </p>
+
+  <p> <strong> <%= link_to portfolio_item.title , pfolio_path(portfolio_item)  %> </strong>  </p>
   <p> <%= portfolio_item.subtitle  %> </p>
   <p> <%= portfolio_item.body  %> </p>
   <%#=  portfolio_item.main_image  %> <br>

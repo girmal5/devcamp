@@ -26,6 +26,10 @@ class PfoliosController < ApplicationController
     end
   end
 
+  def show
+    @portfolio_item = Pfolio.find(params[:id])
+  end
+
 
 def edit
   @portfolio_item = Pfolio.find(params[:id])
