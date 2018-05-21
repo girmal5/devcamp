@@ -13,8 +13,10 @@ class PfoliosController < ApplicationController
   end
 
   def create
+    #perform the lookup
     @portfolio_item = Pfolio.new(pfolio_params)
 
+    #redirect
     respond_to do |format|
       if @portfolio_item.save
         format.html { redirect_to pfolios_path, notice: 'Portfolio item was successfully created.' }
@@ -48,6 +50,19 @@ def update
   end
 end
 
+def destroy
+  #perform the lookup
+  @portfolio_item = Pfolio.find(params[:id])
+
+  #destroy or delete the record
+  @portfolio_item.destroy
+
+  #REDIRECT
+  respond_to do |format|
+    format.html { redirect_to pfolios_path, notice: 'Portfolio was successfully destroyed.' }
+
+  end
+end
 
 def pfolio_params
     params.require(:pfolio).permit(:title,:subtitle,:body)
