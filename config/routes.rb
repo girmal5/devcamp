@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  resources :pfolios
+  #bring all the resource routes for pfolios except show
+  resources :pfolios, except: [:show]
+
+  get 'pfolio/:id', to: 'pfolios#show', as: 'pfolio_show'
 
   # get 'pages/about'
   # get 'pages/contact'
@@ -13,6 +16,7 @@ Rails.application.routes.draw do
   #we can have custom ones even if we dont have the same file name
 
   get 'about-me', to: 'pages#about'
+  get 'reachus', to: 'pages#contact'
 
 
 
