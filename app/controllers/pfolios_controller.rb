@@ -3,6 +3,9 @@ class PfoliosController < ApplicationController
     @portfolio_items = Pfolio.all
   end
 
+  def angular
+    @angular_items = Pfolio.angularfilter  
+  end
 
 
   def new

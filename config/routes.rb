@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :pfolios, except: [:show]
 
   get 'pfolio/:id', to: 'pfolios#show', as: 'pfolio_show'
+  get 'angularsorted', to: 'pfolios#angular'
 
   # get 'pages/about'
   # get 'pages/contact'
