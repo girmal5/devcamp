@@ -4,7 +4,7 @@ class PfoliosController < ApplicationController
   end
 
   def angular
-    @angular_items = Pfolio.angularfilter  
+    @angular_items = Pfolio.angularfilter
   end
 
 
@@ -12,6 +12,7 @@ class PfoliosController < ApplicationController
 
 # it doesnt actually create it it just renders the stuff
     @portfolio_item = Pfolio.new
+    3.times { @portfolio_item.technologies.build}
 
   end
 
@@ -68,7 +69,7 @@ def destroy
 end
 
 def pfolio_params
-    params.require(:pfolio).permit(:title,:subtitle,:body)
+    params.require(:pfolio).permit(:title,:subtitle,:body,technologies_attributes: [:name])
 end
 
 
