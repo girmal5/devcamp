@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   #bring all the resource routes for pfolios except show
   resources :pfolios, except: [:show]
 
