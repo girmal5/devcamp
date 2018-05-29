@@ -8,15 +8,30 @@
     <%= form.label :title %>
     <%= form.text_field :title %>
   </div>
+  <br>
   <div class="field">
     <%= form.label :subtitle %>
     <%= form.text_field :subtitle %>
   </div>
 
+  <br>
+
   <div class="field">
     <%= form.label :body %>
     <%= form.text_area :body %>
   </div>
+
+
+
+  <ul>
+    <!-- to use this must have nested attri enabled in .rb file  -->
+    <%= form.fields_for :technologies do |technology_form|  %>
+    <li>
+      <%=technology_form.label :name %>
+      <%=technology_form.text_field :name %>
+    </li>
+    <% end %>
+  </ul>
 
   <!-- <div class="field">
     <%= form.label :main_image %>
