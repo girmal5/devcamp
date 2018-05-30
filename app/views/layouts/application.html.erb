@@ -14,7 +14,7 @@
        <p class="alert"><%= alert %></p>
 
        <% if current_user %>
-      <center>Account Name: <em><%=current_user.name%>  </em> <p>You are logged in as <em> <%=current_user.email  %> </em> </p> </center>
+      <center>First Name: <em><%=current_user.first_name%>  </em> <p>You are logged in as <em> <%=current_user.email  %> </em> </p> </center>
         <%=link_to "Logout",destroy_user_session_path,method: :delete %>
           <%else %>
 
