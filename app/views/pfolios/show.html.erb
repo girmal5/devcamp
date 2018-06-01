@@ -17,3 +17,27 @@
 <% @portfolio_item.technologies.each do |t| %>
 <p> <%=t.name%></p>
 <% end %>
+
+<hr>
+
+<%= params.inspect  %>
+
+<hr> <br>
+
+<%#= session.inspect  %>
+
+
+<hr> <br>
+
+PARAMS ID :
+<%= params[:id] %>
+
+<br>
+
+this displays the object
+Take care of the bracket!
+
+i first did <%#=Pfolio.find(params[:id].technologies) %> -> This shoots an error
+
+Alternate Way: <%=Pfolio.find(params[:id]).technologies %>
+<%#=Pfolio.find(params[:id].technologies) %>
